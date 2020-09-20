@@ -1,9 +1,15 @@
 $(document).ready(function(){
     
+    var d = new Date();
+    d = d.toUTCString();
+    let p = d.indexOf("2020");
+    d = d.slice(0,p+4);
+    $(".todays-date").text(d);
     setInterval(timer, 1000);
     function timer(){
-        var d = new Date();
-        $(".todays-date").text(d);
+        var dt = new Date();
+        dt = dt.toLocaleTimeString();
+        $(".todays-time").text(dt);
     }
     
     function getData(){
