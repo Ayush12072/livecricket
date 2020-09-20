@@ -125,7 +125,7 @@ $(document).ready(function(){
                                 ovr0 = xt0.slice(0,-2);
                                 ovr0 = parseInt(ovr0)+1;
                             }
-                            var fts = miniScore.matchScoreDetails.inningsScoreList[0].score.toString() +"-"+miniScore.matchScoreDetails.inningsScoreList[0].wickets.toString() + "("+ovr0+")" ;
+                            var fts = miniScore.matchScoreDetails.inningsScoreList[0].score.toString() +"-"+miniScore.matchScoreDetails.inningsScoreList[0].wickets.toString() + " ("+ovr0+")" ;
                             $('.first-team-score').text(fts);
                             $('.first-team-score-crr').show();
                             $('.first-team-score-crr-num').text(miniScore.currentRunRate);
@@ -151,13 +151,17 @@ $(document).ready(function(){
                                 ovr0 = xt0.slice(0,-2);
                                 ovr0 = parseInt(ovr0)+1;
                             }
-                            var fts = miniScore.matchScoreDetails.inningsScoreList[1].score.toString() +"-"+miniScore.matchScoreDetails.inningsScoreList[1].wickets.toString() + "("+ovr1+")" ;
-                            var sts = miniScore.matchScoreDetails.inningsScoreList[0].score.toString() +"-"+miniScore.matchScoreDetails.inningsScoreList[0].wickets.toString() + "("+ovr0+")" ;
+                            var fts = miniScore.matchScoreDetails.inningsScoreList[1].score.toString() +"-"+miniScore.matchScoreDetails.inningsScoreList[1].wickets.toString() + " ("+ovr1+")" ;
+                            var sts = miniScore.matchScoreDetails.inningsScoreList[0].score.toString() +"-"+miniScore.matchScoreDetails.inningsScoreList[0].wickets.toString() + " ("+ovr0+")" ;
                             $('.first-team-score').text(fts);
                             $('.second-team-score').text(sts);
+                            if(!$('.first-team').hasClass('first-innings')){
+                                $('.first-team').addClass('first-innings');
+                            }
                             $('.first-team-score-crr').hide();
                             $('.second-team-score-crr').show();
                             $('.second-team-score-crr-num').text(miniScore.currentRunRate);
+                            $('.second-team-score-req-num').text(miniScore.requiredRunRate);
                         }
                     }
                 }

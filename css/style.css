@@ -2715,3 +2715,18 @@ footer p {
     line-height: 24px;
     margin: 0 0 0px 0;
 }
+
+/*-----Ayush--------*/
+
+.first-innings span{
+    font-size: 18px;
+    color: #746a6a;
+    font-weight: 400;
+}
+.second-team-score-crr span{
+font-size: 13px !important;
+color: #746a6a;
+}
+.teams .second-team-score-crr b {
+    font-size: 13px;
+}
