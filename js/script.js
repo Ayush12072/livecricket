@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    
+    setInterval(timer, 1000);
+    function timer(){
+        var d = new Date();
+        $(".todays-date").text(d);
+    }
+    
     function getData(){
         $.ajax({
             url : 'https://www.cricbuzz.com/api/cricket-match/commentary/30340',
@@ -20,6 +27,10 @@ $(document).ready(function(){
                 // $('.second-team-score').text(sts);
                 console.log(data);
                 plotData(data);
+                if(typeof(data.matchHeader)!=undefined){
+                    var Txt = data.matchHeader.team1.name + " VS " + data.matchHeader.team2.name + ", "+data.matchHeader.matchDescription;
+                    $('.todays-match').text(Txt);
+                }
             },
             error : function(request)
             {
